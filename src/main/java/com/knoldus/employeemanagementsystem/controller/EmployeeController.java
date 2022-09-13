@@ -2,14 +2,20 @@ package com.knoldus.employeemanagementsystem.controller;
 
 import com.knoldus.employeemanagementsystem.model.Employee;
 import com.knoldus.employeemanagementsystem.service.EmployeeService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
 
+/**
+ * here EmployeeController class used to describe...
+ * the get,post,or update the value of employee of our api
+ */
 @RestController
 @RequestMapping("/employee")
+@Api(value = "Employee api controller",tags = "EMPLOYEE API")
 public class EmployeeController {
 
     @Autowired
@@ -29,6 +35,12 @@ public class EmployeeController {
         return employeeService.getEmployeeByID(id);
     }
 
+
+    @GetMapping("/getByName")
+    public Employee getEmployeeByName(@PathVariable String name) {
+
+        return employeeService.getEmployeeByName(name);
+    }
 
     // Update employee
     @PutMapping("/updateEmployee")

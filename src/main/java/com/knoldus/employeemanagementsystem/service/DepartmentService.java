@@ -7,6 +7,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * DepartmentService class is used to do
+ * get ,update,delete department of an employee
+ *
+ * @author  shashikant
+ * @version  JDK 11.0.0
+ */
 @Service
 public class DepartmentService {
 
@@ -19,6 +26,11 @@ public class DepartmentService {
 
     public Department getDepartmentById(Long id) {
         return departmentRepository.findById(id).orElse(null);
+    }
+
+    public Department getDepartmentByName(String name) {
+        return (Department) departmentRepository.findAll();
+
     }
 
     public List<Department> getAllDepartment() {

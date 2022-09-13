@@ -35,4 +35,5 @@ public class Address {
     @Size(min = 2, message = "State should have at least 2 characters")
     private String state;
 
+
 }

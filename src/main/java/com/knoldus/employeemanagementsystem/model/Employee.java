@@ -42,7 +42,6 @@ public class Employee {
     private Department department;
 
 
-
     public Long getId() {
         return id;
     }
